@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  get "/users/:id" => "users#show", as: :user
-
   resources :comments
   resources :follow_requests
   resources :likes
