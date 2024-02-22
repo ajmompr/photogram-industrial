@@ -22,7 +22,10 @@
     </ul>
   </div>
 </div>
+<h2>
+  <%= @user.username%>'s feed
+</h2>
 
-<% current_user.own_photos.each do |photo|%>
+<% current_user.feed.each do |photo|%>
   <%= render "photos/photo", photo: photo %>
 <% end %>

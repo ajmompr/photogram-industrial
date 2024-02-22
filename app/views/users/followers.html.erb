@@ -22,7 +22,14 @@
     </ul>
   </div>
 </div>
+<h2>
+  <%= @user.username%>'s followers
+</h2>
 
-<% current_user.own_photos.each do |photo|%>
-  <%= render "photos/photo", photo: photo %>
-<% end %>
+<ul class="list-group mb-4">
+  <% @user.followers.each do |follower|%>
+  <li class="list-group-item">
+    <%= link_to follower.username, user_path(follower.username)%>
+  </li>
+  <% end %>
+</ul>
